@@ -1,0 +1,32 @@
+name: GH-Actions
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  ruby_service_build:
+    runs-on: cronos
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          clean: true
+      - name: Install Ruby dependencies
+        run: |
+          apk add --no-cache ruby ruby-bundler ruby-dev build-base libpq-dev
+      - name: Bundle install
+        run: bundle install --jobs 4
+      - name: Ruby version check
+        run: ruby --version
+      - name: Run tests
+        run: |
+          bundle exec rake
+      - name: Bundle audit
+        run: |
+          gem install bundler-audit --no-document
+          bundle audit update
+          bundle audit check || true

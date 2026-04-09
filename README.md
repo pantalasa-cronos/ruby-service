@@ -27,4 +27,14 @@ The service starts on port 4567 by default.
 ```bash
 bundle exec rake spec
 ```
-# Updated 2026-04-09T23:03:08Z
+
+## CI
+
+This repo runs on the `cronos` self-hosted runner. The workflow (`.github/workflows/ci.yml`) exercises:
+
+- `bundle install` — triggers the `bundler-cicd` collector hook
+- `ruby --version` — triggers the `cicd` collector hook
+- `bundle exec rake` — triggers the `rake-cicd` collector hook
+- `bundle audit check` — triggers the `bundler-audit-cicd` collector hook
+
+These CI steps generate data for the Lunar Ruby collector and policy checks.
