@@ -19,7 +19,7 @@ jobs:
         run: |
           apt-get update && apt-get install -y ruby ruby-bundler ruby-dev build-essential libpq-dev
       - name: Bundle install
-        run: bundle install --jobs 4
+        run: bundle update && bundle install --jobs 4
       - name: Ruby version check
         run: ruby --version
       - name: Run tests
