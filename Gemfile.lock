@@ -53,9 +53,6 @@ GEM
 PLATFORMS
   ruby
 
-RUBY VERSION
-   ruby 3.2.2p53
-
 DEPENDENCIES
   pg (~> 1.5)
   pry (~> 0.14)
@@ -66,9 +63,6 @@ DEPENDENCIES
   rspec (~> 3.12)
   rubocop (~> 1.60)
   sinatra (~> 3.1)
-
-RUBY VERSION
-   ruby 3.2.2p53
 
 BUNDLED WITH
    2.4.22
