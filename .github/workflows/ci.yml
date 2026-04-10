@@ -17,7 +17,7 @@ jobs:
           clean: true
       - name: Install Ruby dependencies
         run: |
-          apk add --no-cache ruby ruby-bundler ruby-dev build-base libpq-dev
+          apt-get update && apt-get install -y ruby ruby-bundler ruby-dev build-essential libpq-dev
       - name: Bundle install
         run: bundle install --jobs 4
       - name: Ruby version check
