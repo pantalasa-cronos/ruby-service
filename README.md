@@ -38,5 +38,3 @@ This repo runs on the `cronos` self-hosted runner. The workflow (`.github/workfl
 - `bundle audit check` — triggers the `bundler-audit-cicd` collector hook
 
 These CI steps generate data for the Lunar Ruby collector and policy checks.
-# Cronos test 2026-04-10T12:23:50Z
-# Test 2026-04-10T16:05:18Z
